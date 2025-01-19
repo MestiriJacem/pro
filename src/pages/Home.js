@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import TaskForm from '../components/TaskForm';
+import TaskList from '../components/TaskList';
 
 function Home ()  {
   const [tasks,setTasks]=useState([]);
@@ -23,12 +25,18 @@ const toggleTaskCompletion =(taskId)=>{
   setTasks(tasks.map(task=>
     task.id===taskId ? {...task,completed: !task.completed}:task
   ))
-  const 
+  
+};
+const deleteTask =(taskId)=>{
+  if (window.confirm ("are you sure?")){
+    setTasks(tasks.filter (task=>task.id !==taskId))
+  }
 }
 
   return (
     <div>
-      home
+      <TaskForm addTask={addTask} />
+      <TaskList tasks={tasks} toggleTaskCompletion={toggleTaskCompletion} deleteTask={deleteTask}/>
     </div>
   )
 }
