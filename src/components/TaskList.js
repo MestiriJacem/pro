@@ -1,5 +1,6 @@
 import React from 'react'
 import TaskItem from './TaskItem'
+import '../styles/TaskList.css'
 
 function TaskList ({tasks,toggleTaskCompletion,deleteTask})  {
   return (
