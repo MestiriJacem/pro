@@ -28,5 +28,7 @@ function  TaskItem  ({task,toggleTask,deleteTask,editTask}) {
         
         </>)
     }
-    
+    </li>
+  );
+}
 export default TaskItem
