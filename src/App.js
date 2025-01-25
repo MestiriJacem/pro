@@ -1,5 +1,6 @@
 import { Route,Routes } from 'react-router-dom';
 import Header from './components/Header';
+import { ToastContainer } from 'react-toastify';
 import './styles/App.css';
 import About from './pages/About';
 import Home from './pages/Home';
@@ -14,7 +15,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
 
       </Routes>
-      
+      <ToastContainer autoClose={2000}/>
     </div>
   );
 }
