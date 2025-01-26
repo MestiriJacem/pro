@@ -3,6 +3,7 @@ import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import'../styles/Home.css'
 function Home ()  {
   const [tasks,setTasks]=useState([
 {id:1 ,text:'learn react basics',completed:false},

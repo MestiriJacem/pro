@@ -1,5 +1,5 @@
 .task-item{
-    .task-item{
+    
         display: flex;
         justify-content: space-between;
         align-items:center;
@@ -14,7 +14,7 @@
         overflow-wrap:break-word
     }
 
-}
+
 .task-item.completed{
     color:gray;
     text-decoration: line-through;
