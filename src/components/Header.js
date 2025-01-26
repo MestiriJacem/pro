@@ -35,7 +35,9 @@ function Header ({title}){
    <nav className='nav'>
     <Link to="/">Home</Link>
     <Link to="/about">About</Link>
-    <button className='toggle-btn'onClick={()=> setDarkMode(!darkMode)}>
+    <button className='dark-mode-toggle'onClick={(toggleDarkMode)}>
+       <span className={`toggle-icon ${darkMode? "dark-icon":"light-icon"}`}></span>
+       
         {darkMode ? "🌞 Light Mode":"🌙 Dark Mode"}
 
     </button>

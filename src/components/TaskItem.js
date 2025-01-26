@@ -20,6 +20,8 @@ function  TaskItem  ({task,toggleTask,deleteTask,editTask}) {
         className='edit-input'
         
         />
+        <button onClick={handleEdit} className='save-btn'> save</button>
+        
         </>)
         :( <>
         <span onClick={()=> toggleTask(task.id)}>{task.text} </span>

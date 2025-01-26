@@ -41,7 +41,7 @@ toast.info("task deleted!",{position:'top-right'})
 
 
   return (
-    <div>
+    <div className='home-container'>
       <TaskForm addTask={addTask} />
       <TaskList tasks={tasks} toggleTask={toggleTask} deleteTask={deleteTask}/>
     </div>
