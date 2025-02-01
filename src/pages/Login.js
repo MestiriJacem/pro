@@ -3,7 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 
-function SignUp(){
+function Login(){
     const {login}=useContext(AuthContext)
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("")
@@ -28,3 +28,4 @@ function SignUp(){
 
 
 }
+export default Login
