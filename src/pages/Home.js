@@ -10,6 +10,7 @@ function Home ()  {
 {id:2,text:'understand jsx', completed:false},
 {id:3 ,text:'build components',completed:false}
   ]);
+  const [filter,setFilter]= useState('all')
   // function to add task
   const addTask =(taskText)=>{
     if(!taskText.trim()){
@@ -34,7 +35,12 @@ toast.info("task deleted!",{position:'top-right'})
       task.id===id?{...task,completed:!task.completed}:task
     )) 
   toast.success("Task updated!",{position:"top-right"}) }
-  
+  //filter tasks
+  const filteredTasks=tasks.filter(task=>{
+    if (filter=== 'completed') return task.completed;
+    if(filter ==='unfinished') return !task.completed;
+  return true;
+  })
 
 
   
@@ -44,7 +50,12 @@ toast.info("task deleted!",{position:'top-right'})
   return (
     <div className='home-container'>
       <TaskForm addTask={addTask} />
-      <TaskList tasks={tasks} toggleTask={toggleTask} deleteTask={deleteTask}/>
+      <div className='filter-buttons'>
+        <button onClick={()=>setFilter("all")}>All</button>
+        <button onClick={()=>setFilter("completed")}>completed</button>
+        <button onClick={()=>setFilter("unfinished")}>unfinished</button>
+      </div>
+      <TaskList tasks={filteredTasks} toggleTask={toggleTask} deleteTask={deleteTask}/>
     </div>
   )
 }
